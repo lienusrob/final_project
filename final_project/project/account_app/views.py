@@ -7,7 +7,7 @@ from django.contrib.auth import login, authenticate
 from django.urls import reverse_lazy
 from django.views.generic.base import TemplateView, View
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile 
 from django.views.generic import ListView, DetailView
 
 # Create your views here.
@@ -26,8 +26,7 @@ class HomeView (TemplateView):
     template_name = "homepage.html"
 
 class UserListView(ListView):
-    model = Profile 
-
+     model = Profile 
 
 class UserDetailView (DetailView): 
     model= Profile 
