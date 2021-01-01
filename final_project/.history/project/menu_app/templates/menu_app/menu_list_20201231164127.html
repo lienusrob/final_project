@@ -1,0 +1,64 @@
+
+
+{% extends 'base.html' %}
+<!-- {% load static %} -->
+
+{% block content %}
+
+
+
+
+
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'items/order_list.css' %}"> -->
+
+<!-- 
+<style media="screen">
+  body{
+    margin-top:0;
+  }
+</style> -->
+
+<!-- 
+<header>
+  <h1 style=>Our Menu</h1>
+</header>
+
+<section>
+  <div class="order-list-content-section" ">
+
+      <div class= "container p-3">
+        {% for category in item_categories %} -->
+          <!-- <div id="{{category}}" > -->
+
+              <!-- <h3 class="category-display" style="color:black;margin-bottom:25px;">{{category}}</h3>
+            </div> -->
+
+            <div class="container p-3">
+                <h1> {{category}}</h1>
+            {% for item in menu_list %}
+              <!-- {% if item.category == category %} -->
+              {{item.name}}
+              <p></p>≈
+
+            
+              <from action= "/{{category}}" method = "POST">  
+                {%csrf_token%}
+                      <div class="price"></div>${{item.price}}</div>
+                      <div class="item">{{item.name}}
+                      </div>
+                    </from>
+                    </div>
+                </div>
+              <!-- {% endif %} -->
+            {% endfor %}
+            </div>
+          </div>
+        <!-- {% endfor %} -->
+      <!-- </div> -->
+
+ 
+    </div>
+ 
+</section> 
+
+{% endblock %}

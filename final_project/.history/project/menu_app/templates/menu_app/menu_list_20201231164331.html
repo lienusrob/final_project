@@ -1,0 +1,199 @@
+Try to get this data on the front end
+We did this code
+For loop
+okay
+Later on we have to connect to models
+Sir can we cancel tomorrow class since it’s Christmas in Germany
+Sure Lienus
+We are doing today right ?
+Yes. That would be good to still have on today
+Yeah
+meet.google.com/jwm-jceh-mkn
+Sorry my wife seems to be down I need to restart it
+Okay
+Hey Lienus, can we skip tomorrow's class? I don't feel well.
+Ofcourse
+How you feel better soon
+Thanks Lienus
+Hey Lienus, can we start from tomorrow? I'm not feeling good yet. Sorry, for canceling the classes for these two days.
+dont wory about it i hope you will ge tbetter soon
+Thanks 😊
+Hey Lienus
+What will be today's topic ?
+I am doing my final project. and i am doing a website for a  cofffee/restaurant. i have create most of the modules for now for app called menue app still stuggling with the views a little
+and the account app is done just one minor error
+so i would like to work on the views of my menue app
+Sure
+if you want i can send you my code before class so you can understnad structure a biti better
+But I have an Idea, if you are interested you can work on password management system. When encryption and decryption will be involved.
+Where*
+So, you will also be working on seciruty.
+I would be intrested but i have been doing the other project already for 2 days and dont want just tuck that away since i already spend quite some time on it :/
+and i have to be fiinsihed with the project at the 6th
+Okay
+Cool
+Send me the code
+its uplading but will take a while currently there is an issue with my views that i cant fix in the menu_app
+the code takes a long time to upload i dont have good internet atm
+What is the functionality of this application
+its supposed to be a a website for a fictional coffee place where you can order things for pick up
+and look at the menue
+menu.
+Okay
+Will check
+Backend 
+Menue app 
+- Manage items 
+- Out of stock 
+- Manage categories 
+
+Account App
+- Manage users in admin panel 
+- Signup done 
+- Logging done 
+- Logout done 
+
+Essentials 
+- About us. 
+    - I know it could be static and just made added to html 
+- Contact from done 
+    - Email 
+    - Phone 
+    - Text
+
+Orders 
+- Open oders orders 
+- Fulfilled orders 
+- Users current order 
+- Users past order
+
+Check out
+- For now only cash as payment
+- Maybe other payment methods 
+
+Frontend 
+- Homepage
+- Product view 
+- Add to shopping cart. 
+- Check out order 
+    - Date and time of pick up
+- Account related(login, logout, signup)
+- Contact from
+
+Optional 
+- Forum 
+- Sign up with google/Facebook Open authentication 
+- Search 
+- Stock management
+    - Log your stock
+    …
+Okay
+Cool
+meet.google.com/tcv-maxh-tsk
+Hey Sir, I wanted to let you know that I feel like we need to make more progress in our session. I don’t have the time and the money to keep trying to render things to the front end and it’s not working. I feel like to often we are stuck and things don’t work. And we are stuck to long. 
+I even feel like less are working since we started the afternoon session with you.  the category module is creating doubles every time you add a new item to the categories..... we changed it even if it was working just fine before. Okay a little bit inefficient due to the fact that there where a 2 modules. But it was working. Then we started changing the two modules which ain’t really work and tryied to to the drop down list. Which we didn’t manage either. I know 2 hours is a…
+Hey Lienus, first of all sorry for the trouble I made. I understand you. Attend today, if this dosen't work out, we can cancel the classes. Is that okay ?
+yes thats okay.
+👍
+Hey Lienus, will be 30 min late. Sorry for informing at neck momemt.
+Dont worry.
+let me know when you are free again
+Thanks
+In 30 min
+cool
+I will be 10 minutes late
+Okay
+When you are ready join here
+Join Zoom Meeting
+https://us04web.zoom.us/j/9837678011?pwd=U3EreE1GNGRRc3FsR3laVFdsWVRodz09
+
+Meeting ID: 983 767 8011
+Passcode: 1wiX9F
+Zoom
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>Resturant</title>
+  </head>
+  <body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Resturant</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for item in category_menu %}
+                  <li><a class="dropdown-item" href="{% url 'menu_details' item.name %}">{{ item }}</a></li>
+                    {% endfor %}
+                </ul>
+              </li>   
+              
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Add Items</a>
+              </li>
+            </ul>
+        
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+
+      {% endblock %}
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+<div class="container p-3">
+<h1>{{category}}</h1><br/>
+{% for item in menu_details %}
+  
+   <h4>{{item.name}}</h4> 
+   <p>Rs. {{item.price}}</h4>
+   <form action="/{{category}}/" method="POST">
+   {% csrf_token %}
+   <input type="number" name="quantity" value="1" min="1"/>
+   <input type="hidden" name="added_item" value="{{item.pk}}"/>
+   <input type="hidden"  name="cart" value="{{user.pk}}"/><br/><br/>
+   <input type="submit" class="btn btn-secondary" value="Add to cart"/>
+   </form>
+  <hr/>
+{% endfor %}
+</div>
+{% endblock %}

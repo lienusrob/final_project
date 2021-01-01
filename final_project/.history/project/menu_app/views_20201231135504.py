@@ -1,0 +1,37 @@
+
+from .models import  MenuItem,  ItemsCategory, Order
+#from .account_app.models  import Profile
+from django.views.generic import ListView
+from django.shortcuts import render, get_object_or_404
+from items.extras import generate_order_id
+
+class MenuListView(ListView):
+    model = MenuItem
+    template_name = 'items/menu_list.html'
+
+def menu_list_view(request):
+    item_list = MenuItem.objects.all()
+
+    context = {'item_list': item_list,
+                'item_categories':reversed(ItemsCategory.objects.all()),
+                'item_categories_side_nav':reversed(ItemsCategory.objects.all())}
+
+    return render(request, 'menu_app/menu_list.html', context)
+
+
+def menu_item_detail(request, **kwargs):
+    item = MenuItem.objects.filter(id=kwargs.get('pk')).first()
+
+    context = {'item':item}
+
+    return render(request, 'menu_app/item_details.html', context)
+
+
+# def new_order_info(request):
+#     user_profile = get_object_or_404(Profile, user=request.user)
+#     order, created = Order.objects.get_or_create(customer=user_profile.user, is_ordered=False)
+#     if created:
+#         order.save()
+#     context = {'order':order}
+
+#     return render(request, 'items/order_info.html', context)

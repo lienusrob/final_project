@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+<div class="container p-3">
+<h1>{{category}}</h1><br/>
+{% for item in menu_details %}
+  
+   <h4>{{item.name}}</h4> 
+   <p>§ {{item.price}}</h4>
+   <form action="/{{category}}/" method="POST">
+   {% csrf_token %}
+   <input type="number" name="quantity" value="1" min="1"/>
+   <input type="hidden" name="added_item" value="{{item.pk}}"/>
+   <!-- <input type="hidden"  name="cart" value="{{user.pk}}"/><br/><br/> -->
+   <input type="submit" class="btn btn-secondary" value="Add to cart"/>
+   </form>
+  <hr/>
+{% endfor %}
+</div>
+{% endblock %}
