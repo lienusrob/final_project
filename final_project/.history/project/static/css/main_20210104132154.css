@@ -1,0 +1,14 @@
+h1, h2, h3,h4,h5, h6, p , form{
+    color: whitesmoke;
+    }
+body {
+    background-color:rgb(77, 66, 66);
+  }
+
+
+
+.forms { display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: ;}
